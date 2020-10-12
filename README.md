@@ -31,12 +31,12 @@ minio.secret-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 
 等待输出finished upload代表上载完成。
 
-![image.png](https://liuzihua.top/upload/2020/10/image-12e101db583940059726416c7ed891b2.png)
+参考图：https://liuzihua.top/upload/2020/10/image-12e101db583940059726416c7ed891b2.png
 
 
 可以看到备份文件已被上传：
 
-![image.png](https://liuzihua.top/upload/2020/10/image-5650f876d08c44f483b6a7c1645751a7.png)
+参考图：https://liuzihua.top/upload/2020/10/image-5650f876d08c44f483b6a7c1645751a7.png
 
 # 项目编译
 
