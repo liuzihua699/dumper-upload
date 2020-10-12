@@ -1,30 +1,18 @@
 # 简单运行
-下载[dumper-upload-1.0.zip](https://github.com/zihuaVeryGood/dumper-upload/releases/download/1.0/dumper-upload-1.0.zip) 解压进入目录
+下载[dumper-upload-1.0.zip](https://github.com/zihuaVeryGood/dumper-upload/releases/download/1.0/dumper-upload-1.0.zip)
 
-修改config/application配置项：
 ```shell script
-# mydumper configuration
-dumper.database=backup_test
-dumper.chunk-size=5
-#dumper.table-list=a,b,c,d
-#dumper.outdir=./data
-#dumper.statement-size=1000000
-#dumper.rows=100
-
-# mysql configuration
-dumper.mysql.host=rm-bp1j1g6l45i6vcq23co.mysql.rds.aliyuncs.com
-dumper.mysql.username=dev
-dumper.mysql.password=VoKMmIjY3YZm7cRV
-dumper.mysql.port=3306
-
-# minio configuration
-minio.ip=118.25.130.227
-minio.port=9000
-minio.access-key=AKIAIOSFODNN7EXAMPLE
-minio.secret-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+unzip dumper-upload-1.0.zip
+cd dumper-upload
 ```
 
-以下命令行会以5MB为一个块对数据库进行备份并上传至MinIO服务器
+修改config/application配置项(配置项参考后文)：
+
+```shell script
+vi config/application.config
+```
+
+执行以下命令行会以5MB为一个块对数据库进行备份并上传至MinIO服务器
 ```shell script
 ./start.sh -h rm-bp1j1g6l45i6vcq23co.mysql.rds.aliyuncs.com -u dev -p VoKMmIjY3YZm7cRV -B backup_test -F 5 -C ./config/application.config
 ```
@@ -71,6 +59,42 @@ dumper-upload使用java实现，运行后会根据配置项和配置文件执行
 -P | dumper.mysql.port | 端口号
 -C | | 指定配置文件
 
+```properties
+# mydumper configuration
+dumper.database=backup_test
+dumper.chunk-size=5
+#dumper.table-list=a,b,c,d
+#dumper.outdir=./data
+#dumper.statement-size=1000000
+#dumper.rows=100
 
+# mysql configuration
+dumper.mysql.host=rm-bp1j1g6l45i6vcq23co.mysql.rds.aliyuncs.com
+dumper.mysql.username=dev
+dumper.mysql.password=VoKMmIjY3YZm7cRV
+dumper.mysql.port=3306
+
+# minio configuration
+minio.ip=118.25.130.227
+minio.port=9000
+minio.access-key=AKIAIOSFODNN7EXAMPLE
+minio.secret-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+```
+
+
+# 测试账号
+
+```shell script
+MinIO地址: http://118.25.130.227:9000
+Access-Key: AKIAIOSFODNN7EXAMPLE
+Secret-Key: wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
+```
+
+```shell script
+MySQL-RDS地址: rm-bp1j1g6l45i6vcq23co.mysql.rds.aliyuncs.com
+用户名: dev
+密码: VoKMmIjY3YZm7cRV
+端口号: 3306
+```
 
 
