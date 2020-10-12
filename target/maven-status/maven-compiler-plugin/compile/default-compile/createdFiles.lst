@@ -1,6 +1,0 @@
-com\zihua\upload\UploadStartUp.class
-com\zihua\upload\Upload.class
-com\zihua\upload\options\CommandLineFlags.class
-com\zihua\upload\utils\CommonsUtils.class
-com\zihua\upload\options\UploadConfig.class
-com\zihua\upload\exception\IllegalCommandException.class

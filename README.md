@@ -1,5 +1,5 @@
 # 简单运行
-下载dumper-upload-1.0.zip，解压进入目录
+下载[dumper-upload-1.0.zip](https://github.com/zihuaVeryGood/dumper-upload/releases/download/1.0/dumper-upload-1.0.zip) 解压进入目录
 
 修改config/application配置项：
 ```shell script
@@ -37,6 +37,16 @@ minio.secret-key=wJalrXUtnFEMI/K7MDENG/bPxRfiCYEXAMPLEKEY
 可以看到备份文件已被上传：
 
 ![image.png](https://liuzihua.top/upload/2020/10/image-5650f876d08c44f483b6a7c1645751a7.png)
+
+# 项目编译
+
+```shell script
+git clone https://github.com/zihuaVeryGood/dumper-upload
+cd dumper-upload
+mvn clean package
+```
+会在target目录打包好完整的dumper-upload-1.0.zip文件，解压后可直接运行。
+
 
 # 说明
 ## 实现思路
